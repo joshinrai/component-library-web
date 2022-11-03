@@ -21,6 +21,7 @@
   "scripts": {
     "dev": "dumi dev",
     "start": "npm run dev",
+    "build:doc": "dumi build",
     "build:site": "rimraf doc-site && dumi build",
     "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
     "deploy:site": "npm run build:site && gh-pages -d doc-site",
@@ -121,6 +122,7 @@
     "through2": "^3.0.1",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.10.1",
+    "father": "^4.0.0-rc.2",
     "typescript": "^3.7.3"
   },
   "dependencies": {

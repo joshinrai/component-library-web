@@ -21,12 +21,20 @@ if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
 }; */
 export default defineConfig({
     title: 'component-library-web',
-    mode: 'site',
-    outputPath: 'doc-site',
+    history: { type: 'hash' },
+    favicon: './marioBro.ico',
+    logo: './marioBro.ico',
+    resolve: {
+      includes: ['example'],
+    },
+    publicPath: './',
+    outputPath: 'docs',
+    // mode: 'site',
+    // outputPath: 'doc-site',
     exportStatic: {},
     dynamicImport: {},
     webpack5: {},
     mfsu: {},
     base,
-    publicPath,
+    // publicPath,
   });
