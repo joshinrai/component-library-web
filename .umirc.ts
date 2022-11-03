@@ -25,11 +25,11 @@ export default defineConfig({
     favicon: './marioBro.ico',
     logo: './marioBro.ico',
     resolve: {
-      includes: ['example'],
+      includes: ['example', 'src'],
     },
     publicPath: './',
     outputPath: 'docs',
-    // mode: 'site',
+    mode: 'site',
     // outputPath: 'doc-site',
     exportStatic: {},
     dynamicImport: {},
