@@ -3,7 +3,7 @@ import { Wrapper, ButtonItem, PackWrapper } from './styles';
 
 type Item = {
   label: string;
-  value: string;
+  value: string | undefined;
 };
 
 export interface ElasticBoxProps {
@@ -199,4 +199,4 @@ const ElasticBox: React.FC<ElasticBoxProps> = (
   );
 };
 
-export default ElasticBox;
+export default memo(ElasticBox);

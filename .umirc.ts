@@ -34,7 +34,7 @@ export default defineConfig({
     exportStatic: {},
     dynamicImport: {},
     webpack5: {},
-    mfsu: {},
+    // mfsu: {},
     base,
     // publicPath,
   });
