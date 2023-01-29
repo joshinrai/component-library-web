@@ -2,7 +2,7 @@
  * @Author: joshinrai joshinrai@163.com
  * @Date: 2023-01-29 10:52:53
  * @LastEditors: joshinrai joshinrai@163.com
- * @LastEditTime: 2023-01-29 11:40:18
+ * @LastEditTime: 2023-01-29 13:48:39
  * @FilePath: /component-library-web/src/components/carousel/styles/index.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -17,7 +17,7 @@ const CarouselWrapper = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: linear-gradient(45deg, #8B5CF6, #EC4899);
+  background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
   font-family: 'Montserrat', sans-serif;
 `;
 
@@ -33,30 +33,27 @@ const CardContainerWrapper: any = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  transform:
-    rotateY(calc(var(--offset) * 50deg))
-    scaleY(calc(1 + var(--abs-offset) * -0.4))
-    translateZ(calc(var(--abs-offset) * -30rem))
-    translateX(calc(var(--direction) * -5rem));
+  transform: rotateY(calc(var(--offset) * 50deg)) scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem)) translateX(calc(var(--direction) * -5rem));
   filter: blur(calc(var(--abs-offset) * 1rem));
   transition: all 0.3s ease-out;
 
-  --active: ${({i, active}: any) => i === active ? 1 : 0};
-  --offset: ${({i, active}: any) => (active - i) / 3};
-  --direction: ${({i, active}: any) => Math.sign(active - i)};
-  --abs-offset: ${({i, active}: any) => Math.abs(active - i) / 3};
-  pointer-events: ${({i, active}: any) => active === i ? 'auto' : 'none'};
-  opacity: ${({i, active}: any) => Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1'};
-  display: ${({i, active}: any) => Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block'};
+  --active: ${({ i, active }: any) => (i === active ? 1 : 0)};
+  --offset: ${({ i, active }: any) => (active - i) / 3};
+  --direction: ${({ i, active }: any) => Math.sign(active - i)};
+  --abs-offset: ${({ i, active }: any) => Math.abs(active - i) / 3};
+  pointer-events: ${({ i, active }: any) => (active === i ? 'auto' : 'none')};
+  opacity: ${({ i, active }: any) => (Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1')};
+  display: ${({ i, active }: any) => (Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block')};
 `;
 
 const CardWrapper = styled.div`
-  width: 82%;
+  box-sizing: border-box;
   height: 100%;
   padding: 2rem;
   background-color: hsl(280deg, 40%, calc(100% - var(--abs-offset) * 50%));
   border-radius: 1rem;
-  color: #9CA3AF;
+  color: #9ca3af;
   text-align: justify;
   transition: all 0.3s ease-out;
 
@@ -65,10 +62,11 @@ const CardWrapper = styled.div`
     font-size: 2rem;
     font-weight: bold;
     margin: 0 0 0.7em;
-    color: #1F2937;
+    color: #1f2937;
   }
 
-  p, h2 {
+  p,
+  h2 {
     transition: all 0.3s ease-out;
     opacity: var(--active);
   }
@@ -98,10 +96,4 @@ const NavButton = styled.button`
   }
 `;
 
-export {
-  CarouselWrapper,
-  CarouselContentWrapper,
-  CardContainerWrapper,
-  CardWrapper,
-  NavButton,
-};
+export { CarouselWrapper, CarouselContentWrapper, CardContainerWrapper, CardWrapper, NavButton };
