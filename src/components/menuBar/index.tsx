@@ -1,12 +1,4 @@
-/*
- * @Author: joshinrai joshinrai@163.com
- * @Date: 2023-01-29 14:00:10
- * @LastEditors: joshinrai joshinrai@163.com
- * @LastEditTime: 2023-01-29 17:12:44
- * @FilePath: /component-library-web/src/components/menuBar/index.tsx
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-import React, { memo, useState, useRef } from 'react';
+import React, { memo, useState } from 'react';
 import { MenuBarWrapper, MenuWrapper, MenuItem, MenuBorder, SvgContainer } from './styles';
 
 enum BgColorEnum {
